@@ -1,5 +1,5 @@
 const express = require('express')
-const { signUp, loginUser, verifyEmail, resendVerificationEmail, forgotPassword, changePassword, resetPassword, getAll, deleteUser, getOne} = require('../controller/appController')
+const { signUp, loginUser, verifyEmail, resendVerificationEmail, forgotPassword, changePassword, resetPassword, getAll, deleteUser, getOne, makeAdmin} = require('../controller/appController')
 const authenticator = require('../middleware/auth2')
 
 const router = express.Router()
@@ -21,6 +21,8 @@ router.post(`/reset-password/:token`, resetPassword)
 router.get(`/getone/:userId`, getOne)
 
 router.get(`/getall`, authenticator, getAll)
+
+router.get(`/make-admin/:userId`, makeAdmin)
 
 router.delete(`/delete-user/:userId`, authenticator, deleteUser)
 

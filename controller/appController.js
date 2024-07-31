@@ -309,7 +309,7 @@ const changePassword = async (req, res) => {
 
 const makeAdmin = async(req, res)=> {
     try {
-        const userId = req.params.id
+        const {userId} = req.params
         const user = await appModel.findById(userId)
         if(!user){
             return res.status(404).json(`User with ID ${userId} was not found`)
