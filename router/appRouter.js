@@ -18,7 +18,7 @@ router.post(`/change-password/:token`, changePassword)
 
 router.post(`/reset-password/:token`, resetPassword)
 
-router.get(`/getall`, getOne)
+router.get(`/getone`, getOne)
 
 router.get(`/getall`, authenticator, getAll)
 
