@@ -8,7 +8,7 @@ const port = process.env.port || 5545
 require(`dotenv`).config()
 const app = express();
 app.use(cors({origin:'*'}))
-app.use(morgan("start"))
+app.use(morgan("dev"))
 app.use(express.json())
 
 
