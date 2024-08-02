@@ -6,8 +6,10 @@ const todoRouter = require(`./router/todoRouter.js`)
 const port = process.env.port || 5545
 require(`dotenv`).config()
 const app = express();
-app.use(express.json())
 app.use(cors({origin:'*'}))
+app.use(morgan("start"))
+app.use(express.json())
+
 
 app.use('/api/v1/user', appRouter)
 app.use('/api/v1/user', todoRouter)
